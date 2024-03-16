@@ -1,66 +1,115 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  a {
-    text-decoration: none;
-  }
-  .container {
-    width: 80%;
-    margin: 0 auto;
-    font-family: sans-serif;
-  }
-  .blocks {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 50px;
-  }
-  .card {
-    width: 300px;
-    height: 100%;
-    background-color: cornflowerblue;
-    border-radius: 30px;
-    padding: 20px 10px;
-  }
-  .img1 {
-    width: 250px;
-    height: 140px;
-    margin-left: 20px;
-  }
-  .img2 {
-    width: 190px;
-    height: 180px;
-    margin: 10px 0 0 40px;
-  }
-  .card a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .tab {
-    margin: 10px 0 0 20px;
-  }
-  .card h2 {
-    text-align: center;
-    margin: 10px 0px;
-  }
-  .card h3 {
-    text-align: center;
-    margin: 5px 0px;
-  }
-  .card h5 {
-    text-align: center;
-  }
-  .button {
-    width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0 0 60px;
-  }
-  .region {
-    margin: 20px 0 20px 350px;
-  }
-  
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+#header {
+  background-color: rgba(59, 58, 58, 0.567);
+  backdrop-filter: blur(5px);
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header h1 {
+  color: black;
+}
+.header-nav a {
+  font-size: 20px;
+  color: white;
+  margin: 20px;
+}
+.region {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+.sort {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+.blocks {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+.card {
+  /* margin-top: 120px; */
+  width: 300px;
+  height: 100%;
+  background-color: cornflowerblue;
+  border-radius: 30px;
+  padding: 20px 10px;
+}
+.img1 {
+  width: 250px;
+  height: 140px;
+  margin-left: 20px;
+}
+.img2 {
+  width: 190px;
+  height: 180px;
+  margin: 10px 0 0 40px;
+}
+.card a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab {
+  margin: 10px 0 0 20px;
+}
+.card h2 {
+  text-align: center;
+  margin: 10px 0px;
+}
+.card h3 {
+  text-align: center;
+  margin: 5px 0px;
+}
+.card h5 {
+  text-align: center;
+}
+.button {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 0 60px;
+}
+.header-search input {
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 7px;
+  background: none;
+  outline: none;
+  padding: 3px 5px;
+}
+
+.header-search button {
+  font-size: 18px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}

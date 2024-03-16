@@ -1,8 +1,8 @@
 const blocks = document.querySelector(".blocks");
-const population = document.querySelector(".population");
 const region = document.querySelector(".region");
-const area = document.querySelector(".area");
-const names = document.querySelector(".names");
+const sort = document.querySelector(".sort");
+const input = document.querySelector(".search");
+const btn = document.querySelector(".btn-search");
 
 let data = null;
 const readAll = (all) => {
@@ -12,7 +12,9 @@ const readAll = (all) => {
     blocks.innerHTML += `
     <div class="card">
     <img class="img1" src ="${el.flags.png}" alt="${el.flags.alt}"/>
-    <img class="img2" src ="${el.coatOfArms.png}" alt=""/>
+    <img class="img2" src ="${
+      Object.keys(el.coatOfArms).length ? el.coatOfArms.png : "./img/logo.png"
+    }" alt="img"/>
     <h2>${el.name.common}</h2>
     <h3>${el.capital}</h3>
     <h2>.....</h2>
@@ -30,89 +32,15 @@ const readAll = (all) => {
   });
 };
 
-let getAll = () => {
-  axios("https://restcountries.com/v3.1/all").then((res) => {
-    res.data.sort((a, b) => {
-      const nameA = a.name.common.toUpperCase();
-      const nameB = b.name.common.toUpperCase();
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-      return 0;
-    });
-
+let getAll = (API) => {
+  //https://restcountries.com/v3.1/name/{name}
+  axios(`https://restcountries.com/v3.1/${API}`).then((res) => {
     readAll(res.data);
     data = res.data;
     console.log(res);
   });
 };
-getAll();
-
-//populetion
-
-population.addEventListener("change", (e) => {
-  let tar = e.target.value;
-  if (tar === "expensive") {
-    result = data.sort((a, b) => {
-      return a.population - b.population;
-    });
-    readAll(result);
-  }
-  if (tar === "cheap") {
-    result = data.sort((a, b) => {
-      return b.population - a.population;
-    });
-    readAll(result);
-  }
-});
-
-// names.addEventListener("change", (e) => {
-//   let tar = e.target.value;
-
-//   if (tar === "expensive") {
-//     result = data.sort((a, b) => {
-//         const nameA = a.name.common
-//         const nameB = b.name.common
-//       if (nameA < nameB) {
-//         return -1;
-//       }
-//     });
-//     readAll(result);
-//   }
-//   if (tar === "cheap") {
-//     result = data.sort((a, b) => {
-//         const nameA = a.name.common
-//         const nameB = b.name.common
-//       if (nameA > nameB) {
-//         return 1;
-//       }
-//     });
-//     readAll(result);
-//   }
-// });
-
-//area
-
-area.addEventListener("change", (e) => {
-  let tar = e.target.value;
-  if (tar === "expensive") {
-    result = data.sort((a, b) => {
-      return a.area - b.area;
-    });
-    readAll(result);
-  }
-  if (tar === "cheap") {
-    result = data.sort((a, b) => {
-      return b.area - a.area;
-    });
-    readAll(result);
-  }
-});
-
-//region
+getAll("all");
 
 region.addEventListener("change", (e) => {
   let fil = e.target.value;
@@ -129,4 +57,29 @@ region.addEventListener("change", (e) => {
     let res = data.filter((el) => el.region === "Americas");
     readAll(res);
   }
+});
+
+sort.addEventListener("change", (e) => {
+  let target = e.target.value;
+  if (target === "area") {
+    let res = data.sort((a, b) => b.area - a.area);
+    readAll(res);
+  } else if (target === "population") {
+    let res = data.sort((a, b) => b.population - a.population);
+    readAll(res);
+  } else if (target === "A-Z") {
+    let res = data.sort((a, b) => (a.name.common < b.name.common ? -1 : 1));
+    readAll(res);
+  } else if (target === "Z-A") {
+    let res = data.sort((a, b) => (a.name.common > b.name.common ? -1 : 1));
+    readAll(res);
+  }
+});
+
+btn.addEventListener("click", () => {
+  getAll(`name/${input.value}`);
+});
+
+input.addEventListener("input", (e) => {
+  getAll(`name/${e.target.value}`);
 });
