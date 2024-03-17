@@ -184,14 +184,18 @@ option {
   padding-top: 8pc;
 }
 
-.btn {
+.buttons {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 1pc;
-  padding-top: 6pc;
+  padding-top: 7pc;
 }
 
 .btn-button {
-  width: 150px;
+  width: 180px;
+}
+
+.btn-button:hover {
+  background: rgb(138, 32, 32);
 }
