@@ -61,7 +61,6 @@ option {
   gap: 50px;
 }
 .card {
-  /* margin-top: 120px; */
   width: 300px;
   height: 100%;
   background-color: cornflowerblue;
@@ -159,7 +158,6 @@ option {
   font-size: 20px;
 }
 .userBlock h4 {
-  /* color: white; */
   font-size: 20px;
 }
 
@@ -192,11 +190,9 @@ option {
 
 .buttons {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 1pc;
-  padding-top: 7pc;
+  padding: 6pc;
 }
 
 .btn-button {
