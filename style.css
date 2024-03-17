@@ -37,6 +37,12 @@ a {
   border: none;
   font-size: 20px;
 }
+.select-btn {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 20px;
+}
 
 option {
   background: rgba(59, 58, 58, 0.567);
@@ -187,6 +193,7 @@ option {
 .buttons {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1pc;
   padding-top: 7pc;
