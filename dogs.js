@@ -1,6 +1,8 @@
 const breeds = document.querySelector(".buttons");
 const dog = document.querySelector(".select-btn");
 const img = document.querySelectorAll(".breeds-img");
+const input = document.querySelector(".search");
+const btn = document.querySelector(".btn-search");
 
 function getAll() {
   axios(`https://dog.ceo/api/breeds/list/all`)
@@ -13,7 +15,7 @@ function getAll() {
        <option value="${el}">${el}</option>`;
       });
     })
-    .then(() => btn());
+    .then(() => btns());
 }
 getAll();
 
@@ -28,7 +30,7 @@ function getImg(name) {
   });
 }
 
-function btn() {
+function btns() {
   const buttons = document.querySelectorAll(".btn-button");
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -38,7 +40,10 @@ function btn() {
 }
 
 dog.addEventListener("change", (e) => {
-    
   console.log(e.target.value);
   getImg(e.target.value);
+});
+
+btn.addEventListener("click", () => {
+  getImg(input.value);
 });
