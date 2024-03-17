@@ -8,14 +8,14 @@ a {
 .container {
   width: 80%;
   margin: 0 auto;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
 }
 #header {
+  width: 100%;
+  position: fixed;
   background-color: rgba(59, 58, 58, 0.567);
   backdrop-filter: blur(5px);
   padding: 20px 0;
-  position: fixed;
-  width: 100%;
   z-index: 99;
 }
 .header {
@@ -37,6 +37,10 @@ a {
   border: none;
   font-size: 20px;
 }
+
+option {
+  background: rgba(59, 58, 58, 0.567);
+}
 .sort {
   color: white;
   background: none;
@@ -57,6 +61,10 @@ a {
   background-color: cornflowerblue;
   border-radius: 30px;
   padding: 20px 10px;
+  transition: 0.5s;
+}
+.card:hover {
+  transform: scale(1.1);
 }
 .img1 {
   width: 250px;
@@ -112,4 +120,78 @@ a {
   background-color: black;
   color: white;
   cursor: pointer;
+}
+
+.user {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 30px;
+  padding-top: 5pc;
+}
+.userBlock {
+  width: 250px;
+  height: 450px;
+  background: cornflowerblue;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.userBlock img {
+  width: 120px;
+  margin-top: 30px;
+}
+
+.userBlock h2 {
+  color: white;
+  font-size: 25px;
+  padding: 14px 0;
+}
+
+.userBlock h3 {
+  color: white;
+  font-size: 20px;
+}
+.userBlock h4 {
+  /* color: white; */
+  font-size: 20px;
+}
+
+.userBlock button {
+  margin-top: 10px;
+  padding: 8px 40px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: red;
+  color: white;
+}
+.btn-button {
+  margin-top: 10px;
+  padding: 8px 40px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: red;
+  color: white;
+}
+
+.userBlock button:hover {
+  background: rgb(153, 24, 24);
+}
+
+.blocks {
+  padding-top: 8pc;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1pc;
+  padding-top: 6pc;
+}
+
+.btn-button {
+  width: 150px;
 }

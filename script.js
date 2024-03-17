@@ -13,7 +13,7 @@ const readAll = (all) => {
     <div class="card">
     <img class="img1" src ="${el.flags.png}" alt="${el.flags.alt}"/>
     <img class="img2" src ="${
-      Object.keys(el.coatOfArms).length ? el.coatOfArms.png : "./img/logo.png"
+      Object.keys(el.coatOfArms).length ? el.coatOfArms.png : "./img/log.png"
     }" alt="img"/>
     <h2>${el.name.common}</h2>
     <h3>${el.capital}</h3>
