@@ -47,3 +47,9 @@ dog.addEventListener("change", (e) => {
 btn.addEventListener("click", () => {
   getImg(input.value);
 });
+
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    getImg(input.value);
+  }
+});
